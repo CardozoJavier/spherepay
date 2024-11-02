@@ -58,10 +58,10 @@ export default function ListProducts() {
                 Status
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                Tags
+                Images
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                Images
+                Tags
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                 Shipping
@@ -86,21 +86,13 @@ export default function ListProducts() {
                 <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-300 max-w-xs truncate">
                   {product.description}
                 </td>
+                <td/>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300">
                   <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                     product.active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
                   }`}>
                     {product.active ? 'Active' : 'Inactive'}
                   </span>
-                </td>
-                <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-300">
-                  <div className="flex flex-wrap gap-1">
-                    {product.tags.map((tag, index) => (
-                      <span key={index} className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 rounded">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-300">
                   {product.images.length > 0 ? (
@@ -121,6 +113,17 @@ export default function ListProducts() {
                     <span className="text-xs text-gray-500">No images</span>
                   )}
                 </td>
+                <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-300">
+                  <div className="flex flex-wrap gap-1">
+                    {product.tags.map((tag, index) => (
+                      <span key={index} className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 rounded">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </td>
+                <td/>
+                <td/>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300">
                   {new Date(product.created).toLocaleDateString()}
                 </td>
