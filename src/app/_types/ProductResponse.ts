@@ -12,6 +12,7 @@ export interface Product {
   prices: string[];
   created: string;
   updated: string;
+  active: boolean;
 }
 
 interface ProductData {
